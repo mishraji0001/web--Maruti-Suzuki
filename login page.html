@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="Website icon"
+      type="png"
+      href="Suzuki-Logo-PNG-Transparent.png"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      label {
+        margin-bottom: 8px;
+        color: #0b0a0a;
+      }
+
+      .login-container {
+        max-width: 300px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgb(15, 8, 113);
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+      }
+
+      button {
+        background-color: #0c16a5;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #4eb7ef;
+      }
+      .bim {
+        background-image: url("g");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      a {
+        background-color: #13086a;
+        color: #f4f2f7;
+      }
+    </style>
+  </head>
+  <div class="bim">
+    <body>
+      <div class="login-container">
+        <h2>Maruti_Suzuki Login:</h2>
+        <form id="loginForm">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" />
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" />
+
+          <button type="button" onclick="validateLogin()">Login</button>
+          <button type="button" onclick="validateLogin()">
+            <a href="index.html">Back</a>
+          </button>
+        </form>
+        <p id="error-message"></p>
+      </div>
+    </body>
+  </div>
+  <script>
+    function validateLogin() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      var errorMessage = document.getElementById("error-message");
+
+      // You can add your own authentication logic here
+      if (username === "example" && password === "password") {
+        errorMessage.innerHTML = "Login successful!";
+        errorMessage.style.color = "green";
+      } else {
+        errorMessage.innerHTML = "Invalid username or password";
+        errorMessage.style.color = "red";
+      }
+    }
+    //nav
+    // Dynamic Navigation Generation
+    const pages = [
+      { label: "Home", link: "home.html" },
+      { label: "Corporate", link: "corporate.html" },
+      { label: "Drive-car", link: "drive.html" },
+      { label: "service", link: "service.html" },
+      { label: "Contact", link: "contact.html" },
+      { label: "Login", link: "login page.html" },
+      { label: "Sign up", link: "Sign up.html" },
+    ];
+
+    const navElement = document.getElementById("dynamicNav");
+
+    pages.forEach((page) => {
+      const linkElement = document.createElement("a");
+      linkElement.href = page.link;
+      linkElement.textContent = page.label;
+      navElement.appendChild(linkElement);
+    });
+  </script>
+</html>

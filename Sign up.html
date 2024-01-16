@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+    rel="Website icon"
+    type="png"
+    href="Suzuki-Logo-PNG-Transparent.png"
+  />
+    <style>
+          body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        
+        
+      }
+      .signup-container {
+        background-color: #cec7ec4c;
+        box-shadow: 0 0 10px rgb(18, 9, 192);
+        border-radius: 8px;
+        overflow: hidden;
+        width: 400px;
+        max-width: 100%;
+        padding: 20px;
+        align-self: center;
+      }
+
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        margin-bottom: 8px;
+        color: #0b0a0a;
+      }
+
+      input {
+        padding: 10px;
+        margin-bottom: 16px;
+        border: 1px solid #401cf2;
+        border-radius: 4px;
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #5b4caf;
+      }
+
+      .error-message {
+        color: #e74c3c;
+        margin-top: 5px;
+      }
+
+      button {
+        background-color: #13086a;
+        color: #f4f2f7;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+a{
+  background-color: #13086a;
+        color: #f4f2f7;
+}
+      button:hover {
+        background-color: #3310e1;
+      }
+      .bim{
+      background-image: url("wp3593846-suzuki-logo-wallpapers.jpg");
+      background-repeat: no-repeat;
+   background-size: cover;
+      }
+    </style>
+  </head>
+  <div class="bim">
+  <body>
+    <div class="center">
+      <div class="signup-container">
+        <h2>Sign Up</h2>
+        <form id="signupForm" onsubmit="return validateForm()">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email"  />
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password"  />
+
+          <label for="confirmPassword">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            
+          />
+
+          <div class="error-message" id="error-message"></div>
+
+          <button type="submit">Sign Up</button>
+          <br>
+          <button type="submit"  ><a href="index.html">Back</a></button>
+        </form>
+      </div>
+    
+  </body>
+
+
+  <script>
+    //signup
+    function validateForm() {
+      var username = document.getElementById("username").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var confirmPassword = document.getElementById("confirmPassword").value;
+
+      var errorMessage = document.getElementById("error-message");
+      errorMessage.innerHTML = "";
+
+      if (password !== confirmPassword) {
+        errorMessage.innerHTML = "Passwords do not match";
+        return false;
+      }
+
+      // Add more validation rules as needed
+
+      return true;
+    }
+  </script>
+</html>
